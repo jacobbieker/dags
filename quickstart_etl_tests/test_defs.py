@@ -1,4 +1,4 @@
-from quickstart_etl import defs
+from weather import defs
 
 
 def test_def_can_load():
