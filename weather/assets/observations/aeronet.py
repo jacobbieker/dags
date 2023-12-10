@@ -16,7 +16,4 @@ def fetch_aeronet_data_for_day(context: dagster.OpExecutionContext, config: Obse
     # Rename data variables to not have spaces
     ds = ds.rename_vars({k: k.replace(" ", "_") for k in ds.data_vars.keys()})
     # Save to disk
-    ds.to_netcdf(f"{config.processed_dir}/{config.start_date}_{parameter}.nc", engine="h5netcdf")
-
-
-
+    ds.to_netcdf(f"{config.raw_dir}/{config.start_date}_{parameter}.nc", engine="h5netcdf")
